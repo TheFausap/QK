@@ -190,7 +190,7 @@ Then we have:
     U       : General rotation gate
     P       : phase shift gate
     QFT     : Quantum Fourier Transform gate
-    CNTRL   : Create a controlled gate
+    CNTRL   : Create a controlled gate (i.e. x=total qubits, y=ctrl qubits, z=tgt qubit, uCX = cntrl[2;1;2;X] / numbered from the top)
     ID      : Identity matrix (multi qubits)
 
 these matrices, define in q.k, require one or more parameters taken from the stack.
@@ -210,7 +210,7 @@ Then, we have miscellaneous functions:
     QPP     
     PST     
     MMU   : matrix multiplication 
-    APPLY   
+    APPLY : matrix / vector multiplication  
     MKR   : kronecker product 
     INV     
     MPOWI : matrix power 
