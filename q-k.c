@@ -33,6 +33,8 @@
 #define SWAP    0x22
 #define PG      0x23
 #define CCX     0x24
+#define SQ2     0x25
+#define ISQ2    0x26
 // use parameter
 #define Rx      0x30
 #define Ry      0x31
@@ -154,6 +156,8 @@ char* pops(void)
         CS(Y)
         CS(S)
         CS(T)
+        CS(SQ2)
+        CS(ISQ2)
         CS(uCX)
         CS(dCX)
         CS(M)
@@ -224,8 +228,11 @@ int main(int n, const char * a[]) {
             IF("uCX",push(uCX))
             IF("dCX",push(dCX))
             IF("SWAP",push(SWAP))
+            IF("SQ2",push(SQ2))
+            IF("ISQ2",push(ISQ2))
             IF("P0",push(P0))
             IF("P1",push(P1))
+            IF("PI",O("%s:PI",genv()))
             IF("B0",push(B0))
             IF("B1",push(B1))
             IF("M",push(M))
@@ -252,8 +259,8 @@ int main(int n, const char * a[]) {
             IF("DB",/* Dagwood Bumstead */EMIT("zround ((cos vDB*pi)*mkr[I;I])-(1a90)*(sin vDB*pi)*(mkr[X;X]+mkr[Y;Y])",genv());GVAL)
             IF("PROB",O("%s:nprob %s\n",genv(),pops());GVAL)
             IF("OP",O("%s:op[%s;%s]\n",genv(),pops(),pops());GVAL)
-            IF("*",O("%s:%s*%s\n",genv(),pops(),pops());GVAL)
-            IF("+",O("%s:%s+%s\n",genv(),pops(),pops());GVAL)
+            IF("Q*",O("%s:%s*%s\n",genv(),pops(),pops());GVAL)
+            IF("Q+",O("%s:%s+%s\n",genv(),pops(),pops());GVAL)
             IFS("QMAT",b+=4;p = atoi(b);
                 switch(p)
                 {
@@ -301,6 +308,10 @@ int main(int n, const char * a[]) {
             IFC('=',b++;s=pop();bzero(c,80);c[0]=s>>16;sprintf(d,"%d",s&0x3fff);strcat(c,d);O("%s:%s\n",b,c);push(s))
             IFC('V',b++;push(('V'<<16)|atoi(b)))
             IFC('%',O("pprob %s\n",pops()))
+            IFC('*',push(pop()*pop()))
+            IFC('+',push(pop()+pop()))
+            IFC('-',push(pop()-pop()))
+            IFC('/',push(pop()/pop()))
             IFC('[',b++;
                 if(isdigit(b[0]))
                 {
