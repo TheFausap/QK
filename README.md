@@ -129,6 +129,10 @@ There are some internal operations, not related to quantum processing:
     MAT
     QMAT
     =
+    +
+    -
+    *
+    /
     CAB
     PERM
     
@@ -141,8 +145,80 @@ Some of them are directly deriving from KDF9 autocode.
     MAT[2|3]   : create a numeric matrix 2x2 or 3x3, popping from the stack the elements
     QMAT[2|3]  : create a quantum matrix 2x2 or 3x3, popping quantum objects from the stack
     =<V>       : creates a new variable V with a value equals to the last element on the stack
+    +,-,*,/    : unsigned integer arithmentic operations between stack elements
     CAB        : performs a permutation ABC -> CAB
     PERM       : performs a permutation ABC -> BCA
 
 All the other operations are mapped to specific operators or functions defined in q.k  
+These are:
 
+    // vectors
+    K0      
+    K1      
+    B0      
+    B1      
+    P0     
+    P1      
+    // matrices
+    I       
+    X       
+    Z       
+    H       
+    Y       
+    S       
+    SX      
+    T       
+    uCX     
+    dCX     
+    M       
+    ECR     
+    SWAP    
+    PG      
+    CCX  
+
+they are directly related to variables defined in q.k and they are stored directly on to stack.
+Then we have:
+
+    // use parameters
+    Rx      
+    Ry      
+    Rz      
+    Rn      
+    CP      
+    U       
+    P       
+    QFT     
+    CNTRL
+    ID
+
+these matrices, define in q.k, require one or more parameters taken from the stack.
+Then, we have miscellaneous functions:
+
+    // functions or operators
+    TS      
+    SP      
+    NZP     
+    NZC     
+    SZ      
+    BASIS   
+    KET     
+    BRA     
+    PPK     
+    PPB     
+    QPP     
+    PST     
+    MMU     
+    APPLY   
+    MKR     
+    INV     
+    MPOWI   
+    P2      
+    PN      
+    MKRN    
+    OM       
+    PROB    
+    PPROB   
+    SHF     
+    CLK
+
+All these functions are related to various operations, mostly internals, used by the Q coprocessor itself.
