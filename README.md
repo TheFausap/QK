@@ -162,7 +162,7 @@ These are:
     P0     : |0><0|
     P1     : |1><1| 
     // matrices
-    I      : Identity gate (one qubit) 
+    I      : Identity, NOP gate (one qubit) 
     X      : Pauli X, NOT, bit flip gate (one qubit)
     Z      : Z, phase flip gate (one qubit) 
     H      : Hadamard gate (one qubit) 
@@ -186,12 +186,12 @@ Then we have:
     Ry      : Rotation Y-axis
     Rz      : Rotation Z-axis
     Rn      
-    CP      
+    CP      : Controlled-phase gate
     U       : General rotation gate
     P       : phase shift gate
-    QFT     : Quantum Fourier Transform
+    QFT     : Quantum Fourier Transform gate
     CNTRL   : Create a controlled gate
-    ID      : Identity matrix
+    ID      : Identity matrix (multi qubits)
 
 these matrices, define in q.k, require one or more parameters taken from the stack.
 Then, we have miscellaneous functions:
@@ -213,15 +213,15 @@ Then, we have miscellaneous functions:
     APPLY   
     MKR   : kronecker product 
     INV     
-    MPOWI   
+    MPOWI : matrix power 
     P2      
     PN      
     MKRN    
     OM    : power of complex unity (omega)  
-    PROB    
-    PPROB   
-    SHF     : shift matrix
-    CLK     : clock matrix
+    PROB  : display amplitudes
+    PPROB : display percentage of probability 
+    SHF   : shift matrix (used for QFT)
+    CLK   : clock matrix (used for QFT)
 
 All these functions are related to various operations, mostly internals, used by the Q coprocessor itself. These are not directly available in the Autocode, but are called indirectly.
 
