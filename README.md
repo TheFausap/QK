@@ -117,3 +117,32 @@ This output is managed by K using the q.k library.
 
 Some operators or functions, defined in the q.k library, are not present in the assembler yet.
 
+## AUTOCODE SYNTAX
+
+Each entry is pushed on to stack, and the result of an function is automatically pushed on to stack.
+There are some internal operations, not related to quantum processing:
+
+    DUP
+    REV
+    SET
+    []
+    MAT
+    QMAT
+    =
+    CAB
+    PERM
+    
+Some of them are directly deriving from KDF9 autocode.  
+
+    DUP        : duplicate the last element on to stack
+    REV        : reverse the two last elements on to stack
+    SET<N>     : put the number N on to stack
+    [N/N/...]  : put the numbers on to stack
+    MAT[2|3]   : create a numeric matrix 2x2 or 3x3, popping from the stack the elements
+    QMAT[2|3]  : create a quantum matrix 2x2 or 3x3, popping quantum objects from the stack
+    =<V>       : creates a new variable V with a value equals to the last element on the stack
+    CAB        : performs a permutation ABC -> CAB
+    PERM       : performs a permutation ABC -> BCA
+
+All the other operations are mapped to specific operators or functions defined in q.k  
+
