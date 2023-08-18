@@ -150,75 +150,79 @@ Some of them are directly deriving from KDF9 autocode.
     PERM       : performs a permutation ABC -> BCA
 
 All the other operations are mapped to specific operators or functions defined in q.k  
+For mathematical details, see https://en.wikipedia.org/wiki/List_of_quantum_logic_gates
+
 These are:
 
     // vectors
-    K0      
-    K1      
-    B0      
-    B1      
-    P0     
-    P1      
+    K0     : |0> 
+    K1     : |1> 
+    B0     : <0| 
+    B1     : <1| 
+    P0     : |0><0|
+    P1     : |1><1| 
     // matrices
-    I       
-    X       
-    Z       
-    H       
-    Y       
-    S       
-    SX      
-    T       
-    uCX     
-    dCX     
-    M       
-    ECR     
-    SWAP    
-    PG      
-    CCX  
+    I      : Identity gate (one qubit) 
+    X      : Pauli X, NOT, bit flip gate (one qubit)
+    Z      : Z, phase flip gate (one qubit) 
+    H      : Hadamard gate (one qubit) 
+    Y      : Y gate (one qubit) 
+    S      : S, square root of Z gate(one qubit) 
+    SX     : SX, square root of NOT gate (one qubit) 
+    T      : T, fourth root of Z gate (one qubit) 
+    uCX    : up Controlled-X, Controlled-NOT, XOR gate (two qubits) 
+    dCX    : down Controlled-X, Controlled-NOT, XOR gate (two qubits)
+    M      : Magic gate (two qubits)
+    ECR    : ECR gate (two qubits)
+    SWAP   : SWAP gate (two qubits) 
+    PG     : Peres gate (three qubits)
+    CCX    : Controlled-Controlled-X gate (Toffoli) gate (three qubits)
 
 they are directly related to variables defined in q.k and they are stored directly on to stack.
 Then we have:
 
     // use parameters
-    Rx      
-    Ry      
-    Rz      
+    Rx      : Rotation X-axis
+    Ry      : Rotation Y-axis
+    Rz      : Rotation Z-axis
     Rn      
     CP      
-    U       
-    P       
-    QFT     
-    CNTRL
-    ID
+    U       : General rotation gate
+    P       : phase shift gate
+    QFT     : Quantum Fourier Transform
+    CNTRL   : Create a controlled gate
+    ID      : Identity matrix
 
 these matrices, define in q.k, require one or more parameters taken from the stack.
 Then, we have miscellaneous functions:
 
     // functions or operators
-    TS      
-    SP      
+    TS    : tensor product
+    SP     
     NZP     
     NZC     
     SZ      
     BASIS   
-    KET     
-    BRA     
+    KET   : defines a Ket  
+    BRA   : defines a Bra  
     PPK     
     PPB     
     QPP     
     PST     
-    MMU     
+    MMU   : matrix multiplication 
     APPLY   
-    MKR     
+    MKR   : kronecker product 
     INV     
     MPOWI   
     P2      
     PN      
     MKRN    
-    OM       
+    OM    : power of complex unity (omega)  
     PROB    
     PPROB   
-    SHF     
-    CLK
+    SHF     : shift matrix
+    CLK     : clock matrix
 
-All these functions are related to various operations, mostly internals, used by the Q coprocessor itself.
+All these functions are related to various operations, mostly internals, used by the Q coprocessor itself. These are not directly available in the Autocode, but are called indirectly.
+
+
