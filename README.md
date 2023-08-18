@@ -119,8 +119,8 @@ Some operators or functions, defined in the q.k library, are not present in the 
 
 ## AUTOCODE SYNTAX
 
-Each entry is pushed on to stack, and the result of an function is automatically pushed on to stack.
-There are some internal operations, not related to quantum processing:
+Each entry is pushed on to stack, and the result of an function is automatically pushed on to stack.  
+These are stack operations, not related to quantum processing:
 
     DUP
     REV
