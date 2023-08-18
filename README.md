@@ -201,21 +201,21 @@ Then, we have miscellaneous functions:
     SP     
     NZP   : return non zero positions in the quantum state 
     NZC   : return non zero coefficients in the quantum state  
-    SZ      
+    SZ    : size of quantum state  
     BASIS   
     KET   : defines a Ket  
     BRA   : defines a Bra  
-    PPK     
-    PPB     
-    QPP     
+    PPK   : pretty print of a ket  
+    PPB   : pretty print of a bra  
+    QPP   : pretty print of quantum state  
     PST     
     MMU   : matrix multiplication 
     APPLY : matrix / vector multiplication  
     MKR   : kronecker product 
     INV     
     MPOWI : matrix power 
-    P2      
-    PN      
+    P2    : square  
+    PN    : n-power  
     MKRN    
     OM    : power of complex unity (omega)  
     PROB  : display amplitudes
