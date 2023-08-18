@@ -5,7 +5,7 @@ This project is based on two programming languages I love the most: C and K.
 About K, there are a lot of "variants" or "dialects" around, for this project I needed a K interpreter able to manage complex numbers.
 For this reason, I chose https://github.com/ktye/i
 
-The C part is a sort of assembler, using a stack based approach, generating an output for the K "coprocessor", that perform the quantum simulation.
+The C part is a sort of assembler, using a stack based approach, generating an output for the Q "coprocessor" (written in K), that perform the quantum simulation.
 
 These are the "opcodes" defined:
 
