@@ -199,8 +199,8 @@ Then, we have miscellaneous functions:
     // functions or operators
     TS    : tensor product
     SP     
-    NZP     
-    NZC     
+    NZP   : return non zero positions in the quantum state 
+    NZC   : return non zero coefficients in the quantum state  
     SZ      
     BASIS   
     KET   : defines a Ket  
