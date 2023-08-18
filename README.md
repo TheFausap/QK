@@ -216,7 +216,7 @@ Then, we have miscellaneous functions:
     MPOWI : matrix power 
     P2    : square  
     PN    : n-power  
-    MKRN    
+    MKRN  : n-times repeated kronecker product 
     OM    : power of complex unity (omega)  
     PROB  : display amplitudes
     PPROB : display percentage of probability 
