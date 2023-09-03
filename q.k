@@ -12,7 +12,6 @@ dim[128]:7
 dim[256]:8
 dim[512]:9
 dim[1024]:10
-pi:3.141592653589793238462643383279502884197
 nzpos:{&~0=./.x}
 nzcoef:{(./.x)[nzpos x]}
 sz:{dim[#,/.x]#2}
@@ -58,9 +57,9 @@ Y:(0 1a270;1a90 0)
 S:(1 0;0 1a90)
 P:{x:180%x;((1;0);(0;angle[1;x]))}
 T:(1 0;0 1a45)
-U:{x:pi%x;y:180%y;z:180%z;xx:(((cos x%2);-(sin x%2)*1%angle[1;z]);((sin x%2)*1%angle[1;y];(cos x%2)*angle[1;y+z]));zround xx}
-Rx:{x:pi%x;xx:(((cos x%2);-(sin x%2)*angle[1;90]);(-(sin x%2)*angle[1;90];(cos x%2)));zround xx}
-Ry:{x:pi%x;xx:((cos x%2;-sin x%2);(sin x%2;cos x%2));zround xx}
+U:{x:1p%x;y:180%y;z:180%z;xx:(((cos x%2);-(sin x%2)*1%angle[1;z]);((sin x%2)*1%angle[1;y];(cos x%2)*angle[1;y+z]));zround xx}
+Rx:{x:1p%x;xx:(((cos x%2);-(sin x%2)*angle[1;90]);(-(sin x%2)*angle[1;90];(cos x%2)));zround xx}
+Ry:{x:1p%x;xx:((cos x%2;-sin x%2);(sin x%2;cos x%2));zround xx}
 Rz:{x:180%x;xx:((1%angle[1;x%2];0);(0;angle[1;x%2]));zround xx}
 Rn:{P x}
 CP:{x:180%x;t:angle[1;x];(1 0 0 0;0 1 0 0;0 0 1 0;(0;0;0;t))}
